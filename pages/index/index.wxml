@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="container_top">
+    <van-nav-bar title="AI体验中心" />
+  </view>
+  <view class="container_content">
+    <van-tabs active="{{ tabNumber }}" bind:change="switchTab">
+      <van-tab title="图像技术" name="pic">
+        <view class="tab_body">
+          <view class="body_item">
+            图像识别
+            <van-icon class="iconfont icon-zhiwu"></van-icon>
+            <view class="item_data">
+              <van-grid clickable column-num="2" gutter="{{ 10 }}">
+                <van-grid-item icon-class="iconfont icon-dongwugugefenxi" link-type="navigateTo" url="" text="动物识别" />
+                <van-grid-item slot-icon link-type="reLaunch" url="" text="植物识别">
+                  <van-icon class="iconfont icon-zhiwu"  slot="icon" ></van-icon>
+                </van-grid-item> 
+              </van-grid>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

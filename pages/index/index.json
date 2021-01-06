@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-icon": "/components/icon",
+    "van-nav-bar": "/components/nav-bar",
+    "van-cell-group": "/components/cell-group",
+    "van-field": "/components/field",
+    "van-stepper": "/components/stepper",
+    "van-cell": "/components/cell",
+    "van-datetime-picker": "/components/datetime-picker",
+    "van-popup": "/components/popup",
+    "van-tab": "/components/tab",
+    "van-tabs": "/components/tabs",
+    "van-grid": "/components/grid",
+    "van-grid-item": "/components/grid-item"
+  
+  }
+}
