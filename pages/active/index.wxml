@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="container_top">
+    <van-nav-bar title="{{title}}" />
+  </view>
+  <view class="container_content">
+    <view class="content_top">
+      <van-image width="10rem" height="10rem" fit="contain" src="{{imgUrl}}" />
+    </view>
+  </view>
+  <view class="container_bottom">
+    <van-button type="primary" bind:click="setShowSheet">上传图片</van-button>
+  </view>
+  <van-action-sheet show="{{ showSheet }}" actions="{{ sheetActions }}" bind:cancel="setShowSheet"  bind:select="setTakePhoto" cancel-text="取消" />
+</view>

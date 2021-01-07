@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <camera />
+  <view class="container_take">
+    <van-button  color="rgba(255,255,255,0.5)" custom-style="width: 150rpx; height: 150rpx"   icon="circle" round="{{true}}"></van-button>
+  </view>
+</view>

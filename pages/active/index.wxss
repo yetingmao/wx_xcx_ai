@@ -1,0 +1,21 @@
+/**index.wxss**/
+.container{
+  position: relative;
+}
+.container_top{
+  width: 100%;
+}
+.container_content{
+  width: 100%; 
+}
+.content_top{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background: #f0f3f6;
+}
+.container_bottom{
+  position: absolute;
+  bottom: 40rpx;
+
+}

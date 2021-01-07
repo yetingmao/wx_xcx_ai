@@ -2,17 +2,16 @@
 //获取应用实例
 const app = getApp()
 import {formatTime } from "../../utils/index"
+import {SKILLS} from "../../config/index"
 
 Page({
   data: {
-    tabNumber: 1,
+    SKILLS,
+    tabNumber: 0,
     show: false,
   },
   //事件处理函数
   onLoad: function () {
-    this.setData({
-    
-    })
   },
   //扫码
   switchTab: function (e) {

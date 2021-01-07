@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-icon": "/components/icon",
+    "van-nav-bar": "/components/nav-bar",
+    "van-image": "/components/image",
+    "van-button": "/components/button",
+    "van-action-sheet": "/components/action-sheet"
+  
+  }
+}

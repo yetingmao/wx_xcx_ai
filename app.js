@@ -1,10 +1,18 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.camera']) {
+          wx.authorize({
+            scope: 'scope.camera',
+            success () {
+              // 用户已经同意小程序使用摄像头功能，后续调用接口不会弹窗询问
+            }
+          })
+        }
+      }
+    })
 
     // 登录
     wx.login({

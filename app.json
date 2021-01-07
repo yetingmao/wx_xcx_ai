@@ -1,11 +1,13 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/index/index",
+    "pages/camera/index",
+    "pages/active/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "AI体验中心",
     "navigationBarTextStyle":"black"
   },
   "sitemapLocation": "sitemap.json"

@@ -1,21 +1,23 @@
 <!--index.wxml-->
 <view class="container">
   <view class="container_top">
-    <van-nav-bar title="AI体验中心" />
+    <van-nav-bar title="体验中心" />
   </view>
   <view class="container_content">
     <van-tabs active="{{ tabNumber }}" bind:change="switchTab">
-      <van-tab title="图像技术" name="pic">
+      <van-tab wx:for="{{SKILLS}}" wx:key="index"  wx:for-item="_s" title="{{_s.title}}" name="{{_s.name}}" >
         <view class="tab_body">
-          <view class="body_item">
-            图像识别
-            <van-icon class="iconfont icon-zhiwu"></van-icon>
+          <view class="body_item" wx:for="{{_s.items}}" wx:for-index="_i"  wx:key="_i" wx:for-item="__s">
+            <view class="item_name">
+              {{__s.name}}
+            </view>
             <view class="item_data">
               <van-grid clickable column-num="2" gutter="{{ 10 }}">
-                <van-grid-item icon-class="iconfont icon-dongwugugefenxi" link-type="navigateTo" url="" text="动物识别" />
-                <van-grid-item slot-icon link-type="reLaunch" url="" text="植物识别">
-                  <van-icon class="iconfont icon-zhiwu"  slot="icon" ></van-icon>
-                </van-grid-item> 
+                <van-grid-item wx:for="{{__s.models}}" wx:for-index="__i"  wx:key="__i" wx:for-item="_m" 
+                                icon-class="iconfont icon-{{_m.icon}}" link-type="navigateTo" url="/pages/active/index?model={{_m.icon}}&name={{_m.text}}" text="{{_m.text}}" />
+                <!-- <van-grid-item wx:for="{{__s.models}}" wx:for-index="__i"  wx:key="__i" wx:for-item="_m" slot-icon link-type="reLaunch" url="" text="{{_m.text}}">
+                  <van-icon class="iconfont icon-{{_m.icon}}"   slot="icon" >{{_m.icon}}</van-icon>
+                </van-grid-item>  -->
               </van-grid>
             </view>
           </view>
