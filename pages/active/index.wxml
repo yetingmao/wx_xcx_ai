@@ -3,13 +3,25 @@
   <view class="container_top">
     <van-nav-bar title="{{title}}" />
   </view>
-  <view class="container_content">
+  <view class="container_content" wx:if="{{imgUrl}}">
     <view class="content_top">
-      <van-image width="10rem" height="10rem" fit="contain" src="{{imgUrl}}" />
+      <van-image width="100%" height="100%" fit="contain" src="{{imgUrl}}" />
     </view>
   </view>
-  <view class="container_bottom">
-    <van-button type="primary" bind:click="setShowSheet">上传图片</van-button>
+  <van-empty wx:else class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="无照片" />
+  <view class="container_list" wx:if="{{result.length>0}}">
+    <van-row custom-class="list_title">
+      <van-col span="12">名称</van-col>
+      <van-col span="12">可信度</van-col>
+    </van-row>
+    <van-row custom-class="list_title" wx:for="{{result}}" wx:key="index">
+      <van-col span="12">{{item.keyword}}</van-col>
+      <van-col span="12">{{item.score}}</van-col>
+    </van-row>
   </view>
-  <van-action-sheet show="{{ showSheet }}" actions="{{ sheetActions }}" bind:cancel="setShowSheet"  bind:select="setTakePhoto" cancel-text="取消" />
+  <view class="container_bottom">
+    <van-button type="primary" bind:click="setTakePhoto">选择图片</van-button>
+    <van-button type="info" disabled="{{imgUrl?false:true}}" bind:click="startCompute">{{title}}</van-button>
+  </view>
+  <!-- <van-loading type="spinner" color="#1989fa" /> -->
 </view>

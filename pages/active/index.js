@@ -1,46 +1,58 @@
-import { _takePhoto } from "../../utils/index"
+import {
+  chooseImage
+} from "../../utils/index";
+import {
+  compute
+} from "../../api/index"
+import Toast from '../../components/toast/toast';
 Page({
   data: {
     title: "",
     model: "",
-    imgUrl:"https://img.yzcdn.cn/vant/cat.jpeg",
-    showSheet:false,
-    sheetActions:[
-      {
-        name: '拍照',
-        key:"takePhoto",
-      },
-      {
-        name: '从手机相册里选择',
-        key:"selectPhoto",
-      },
-    ]
+    imgUrl: "",
+    result: []
   },
   //事件处理函数
   onLoad: function (query) {
     const {
       name,
-      model
+      model,
     } = query;
     this.setData({
-      title: name || "1",
-      model: model || "12"
+      title: name,
+      model: model,
     });
   },
-  //点击上传图片按钮或者取消
-  setShowSheet: function () {
-    this.setData({
-      showSheet: !this.data.showSheet
-    });
-  },
-    //选择底部上传选项
-    setTakePhoto: function (e) {
-      const { key }=e.detail;
-      this.setShowSheet()
-      if(key==="takePhoto"){
-        wx.navigateTo({
-          url: '/pages/camera/index',
+
+  setTakePhoto: function (e) {
+    chooseImage((err, data) => {
+      if (err) {
+        Toast.fail('获取图片失败');
+      } else {
+        const {
+          tempFilePaths
+        } = data;
+        this.setData({
+          imgUrl: tempFilePaths
         })
       }
-    },
+    })
+  },
+  startCompute: function () {
+    compute({
+      imgUrl: this.data.imgUrl[0],
+      model: this.data.model
+    }, (err, res) => {
+      if (err) {
+        Toast.fail('识别失败，请稍后再试');
+      } else {
+        const {
+          result
+        } = res;
+       this.setData({
+        result
+       })
+      }
+    })
+  }
 })

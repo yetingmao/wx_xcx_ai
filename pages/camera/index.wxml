@@ -1,7 +1,20 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" wx:if="{{take}}">
   <camera />
+  <van-toast id="van-toast" />
   <view class="container_take">
-    <van-button  color="rgba(255,255,255,0.5)" custom-style="width: 150rpx; height: 150rpx"   icon="circle" round="{{true}}"></van-button>
+    <van-button color="rgba(255,255,255,0.5)" custom-style="width: 150rpx; height: 150rpx" icon="circle"
+      round="{{true}}" bind:click="setTakePhoto"></van-button>
+  </view>
+</view>
+<view class="container" wx:else>
+  <view class="container_img" >
+    <van-image width="100%" height="100%" fit="contain" src="{{tempImage}}" />
+  </view>
+
+
+  <view class="container_action">
+    <van-button  bind:click="reTakePhoto">重拍</van-button>
+    <van-button  bind:click="goActive">使用这张图片</van-button>
   </view>
 </view>

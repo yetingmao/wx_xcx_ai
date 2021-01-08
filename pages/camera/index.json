@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "van-icon": "/components/icon",
-    "van-button": "/components/button"
+    "van-button": "/components/button",
+    "van-image": "/components/image",
+    "van-toast": "/components/toast"
 
   }
 }

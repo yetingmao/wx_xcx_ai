@@ -1,7 +1,8 @@
 import SKILLS from "./model"
+import Config from "./default"
 
 
 export {
-  SKILLS
+  SKILLS,Config
 }
 

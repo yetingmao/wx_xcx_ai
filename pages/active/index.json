@@ -4,7 +4,11 @@
     "van-nav-bar": "/components/nav-bar",
     "van-image": "/components/image",
     "van-button": "/components/button",
-    "van-action-sheet": "/components/action-sheet"
-  
+    "van-action-sheet": "/components/action-sheet",
+    "van-empty": "/components/empty",
+    "van-loading": "/components/loading",
+    "van-row": "/components/row",
+    "van-col": "/components/col"
+
   }
 }

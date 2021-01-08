@@ -1,10 +1,11 @@
 const formatTime = require('./util.js')
-import {_takePhoto}from "./camera"
+import {chooseImage}from "./camera"
+import {upload,request }from "./request"
 
 
 
 
 
 module.exports = {
-  formatTime: formatTime,_takePhoto
+  formatTime: formatTime,upload,request,chooseImage
 }
