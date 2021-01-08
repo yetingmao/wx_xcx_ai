@@ -14,7 +14,7 @@
       <van-col span="12">名称</van-col>
       <van-col span="12">可信度</van-col>
     </van-row>
-    <van-row custom-class="list_title" wx:for="{{result}}" wx:key="index">
+    <van-row custom-class="list_title list_item" wx:for="{{result}}" wx:key="index">
       <van-col span="12">{{item.keyword}}</van-col>
       <van-col span="12">{{item.score}}</van-col>
     </van-row>

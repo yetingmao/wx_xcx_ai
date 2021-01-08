@@ -19,9 +19,9 @@
 }
 
 .container_list {
-  margin-top: 40rpx;
   width: 90%;
   height: 60%;
+  padding: 40rpx 0  200rpx 0;
 }
 
 .list_title {
@@ -29,6 +29,9 @@
   border: 1px solid #ccc;
   padding: 10rpx;
   margin-top: 20rpx;
+}
+.list_item{
+  font-size: 24rpx;
 }
 
 .container_bottom {
