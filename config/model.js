@@ -14,7 +14,11 @@
             {
               "text":"植物识别",
               "icon":"zhiwu"
+            }, {
+              "text":"食材识别",
+              "icon":"shicai"
             }
+
           ]
         },
         {
